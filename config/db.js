@@ -19,4 +19,12 @@ const db = mysql.createPool({
     enableKeepAlive: true
 });
 
+db.query("SELECT 1", (err) => {
+    if (err) {
+        console.error("Database startup test failed:", err);
+    } else {
+        console.log("Database startup test successful!");
+    }
+});
+
 module.exports = db;
